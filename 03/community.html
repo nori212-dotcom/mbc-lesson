@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ARC - Feed</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-viewport">
+        <header class="header">
+            <h1 class="logo">ARC.</h1>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="community.html" class="nav-link active">Feed</a>
+            </nav>
+        </header>
+
+        <main class="feed-container">
+            <h2 style="padding: 16px 20px 8px; font-size: 24px;">Community Feed</h2>
+            <div id="feed-grid" class="feed-grid">
+                <!-- 포스트 카드가 동적으로 생성됩니다 -->
+            </div>
+        </main>
+    </div>
+
+    <script src="js/arc-engine.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/community.js"></script>
+    <script>
+        document.body.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+    </script>
+</body>
+</html>

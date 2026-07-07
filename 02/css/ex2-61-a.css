@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* position
+기능: 요소를 좌표로 위치시키는 속성 
+속성값: statc, relative, absolute, fixed, sticky */
+.child:nth-child(1) {
+  position: static;
+  position: relative;
+  top: 50px;
+  left: 150px;
+z-index: 0;}
+.child:nth-child(2) {
+  position: relative;
+  top: -100px;
+  z-index: 2;
+}
+.child:nth-child(3) {
+  position: relative;
+  top: -150px;
+  z-index: 6;
+}

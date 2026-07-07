@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>16:9 반응형 영상</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .video {
+        aspect-ratio: 16/9;
+      }
+      .video video {
+        width: 100%;
+        height: 100%;
+      }
+      .container {
+        width: 200px;
+        height: 400px;
+        filter: drop-shadow(2px 2px 10px #000);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      .fill {
+        object-fit: fill;
+      }
+      .contain {
+        object-fit: contain;
+      }
+      .cover {
+        object-fit: cover;
+      }
+      .none {object-fit: none;}
+      .scale-down{object-fit: scale-down;}
+      .container{display: inline-block}
+    </style>
+  </head>
+  <body>
+    <div class="video">
+      <video src="./img/video.mp4" autoplay></video>
+    </div>
+    <div class="container">
+      <img src="./img/rhino.jpg" alt="코뿔소" class="fill" />
+      <h3>object-fit: fill</h3>
+    </div>
+    <div class="container">
+      <img src="./img/rhino.jpg" alt="코뿔소" class="contain" />
+      <h3>object-fit: contain</h3>
+    </div>
+    <div class="container">
+      <img src="./img/rhino.jpg" alt="코뿔소" class="cover" />
+      <h3>object-fit: cover</h3>
+    </div>
+    <div class="container">
+      <img src="./img/rhino.jpg" alt="코뿔소" class="none" />
+      <h3>object-fit: none</h3>
+    </div>
+    <div class="container">
+      <img src="./img/rhino.jpg" alt="코뿔소" class="scale-down" />
+      <h3>object-fit: scale-down</h3>
+    </div>
+  </body>
+</html>

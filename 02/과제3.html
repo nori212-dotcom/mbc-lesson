@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>형성퀴즈1</title>
+    <style>
+      /* 전체 선택자 */
+      /* 아무리 뒤져도 못찾겠습니다 ㅠㅠ */
+      /* 태그 선택자 */
+      table {
+        border: 1px solid black;
+        width: 100%;
+      }
+      /* 아이디 선택자 */
+      #tea {
+        color: red;
+      }
+      /* 그룹 선택자 */
+      .price {
+        color: red;
+      }
+      .good {
+        color: blue;
+      }
+      .brown {
+        color: brown;
+      }
+      .hue {
+        background-color: beige;
+        margin: 0;
+        padding: 5px;
+      }
+      .white {
+        background-color: white;
+        margin: 0;
+      }
+
+      /* 클래스 선택자 */
+      .head {
+        background-color: beige;
+      }
+      .gray {
+        background-color: lightgray;
+      }
+      /* 하위 선택자 */
+      ul div {
+        color: green;
+      }
+      .white div p {
+        font-weight: 400;
+        font-size: 16px;
+        color: green;
+      }
+      /* 자식 선택자 */
+      ul > li > p:first-child {
+        font-size: 18px;
+        font-weight: 600;
+      }
+      /* 인접 선택자 */
+      li + p {
+        color: green;
+      }
+      li > p + p {
+        color: green;
+      }
+      /* 형제 선택자 */
+      .ha li ~ p {
+        background-color: beige;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>
+          <h1 class="head">건강한 하루</h1>
+          <div class="gray">
+            <h2 id="tea">건강해지는 차</h2>
+            <p>
+              머리와 피부에 좋은 차는 어떤 것들일까.
+              <span class="good"> 차의 종류</span> 에 대해 알아보도록 합니다
+            </p>
+            <ul>
+              <li>
+                <p class="hue">대나무차 <span class="price">15,000원</span></p>
+                <p class="hue">얼굴에 물을 주는 효과가 있다.</p>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <p>감잎차 <span class="price">14,000원</span></p>
+              </li>
+              <p>빈혈있는 사람에게 효과가 있다.</p>
+            </ul>
+            <ul>
+              <li class="white">
+                <p>
+                  <span class="brown">결명자차 </span
+                  ><span class="price">20,000원</span>
+                </p>
+                <div class="white">
+                  <p>눈을 밝혀주는 효과가 있다.</p>
+                  <p>보리차와 비슷하나 맛이 더 은은하고 구수하다.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </table>
+    
+  </body>
+</html>

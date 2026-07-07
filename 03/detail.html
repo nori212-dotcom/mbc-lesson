@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ARC - Detail</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-viewport">
+        <header class="header">
+            <h1 class="logo">ARC.</h1>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="community.html" class="nav-link">Feed</a>
+            </nav>
+            <button id="more-btn" style="background: none; border: none; color: var(--primary-color); font-size: 15px; font-weight: 500; cursor: pointer;">More</button>
+        </header>
+
+        <main style="padding: 20px;">
+            <div id="detail-canvas" class="canvas-container" style="margin-bottom: 24px;"></div>
+
+            <h2 id="post-title" style="font-size: 22px; margin-bottom: 4px;"></h2>
+            <div id="post-meta" style="font-size: 13px; opacity: 0.5; margin-bottom: 32px;"></div>
+
+            <section class="comment-section">
+                <h3 style="font-size: 17px; margin-bottom: 16px;">Comments</h3>
+                <div id="comment-list" class="action-group">
+                    <!-- 댓글 목록이 action-group 스타일로 들어갑니다 -->
+                </div>
+
+                <div class="action-group" style="margin-top: 16px; display: flex;">
+                    <input type="text" id="comment-input" placeholder="Add a comment..." style="padding: 16px; flex: 1;">
+                    <button id="comment-submit" style="padding: 0 20px; border: none; background: none; color: var(--primary-color); font-weight: 600;">Post</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/arc-engine.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/detail.js"></script>
+    <script>
+        document.body.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+    </script>
+</body>
+</html>

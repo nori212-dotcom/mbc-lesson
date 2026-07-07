@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 기초 가이드 - 초등학생도 쉽게!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        /* 헤더 */
+        .header {
+            background: linear-gradient(90deg, #FF6B6B, #FFE66D);
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #2d3436;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0px rgba(255,255,255,0.5);
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: #636e72;
+            font-weight: 700;
+        }
+
+        .emoji-float {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .emoji-float:nth-child(1) { top: 15px; left: 20px; animation-delay: 0s; }
+        .emoji-float:nth-child(2) { top: 20px; right: 30px; animation-delay: 1s; }
+        .emoji-float:nth-child(3) { bottom: 15px; left: 50%; animation-delay: 2s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* 본문 */
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #2d3436;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title .icon {
+            font-size: 2rem;
+        }
+
+        .card {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #FF6B6B;
+        }
+
+        .card.yellow { border-left-color: #FFE66D; }
+        .card.green { border-left-color: #4ECDC4; }
+        .card.blue { border-left-color: #45B7D1; }
+
+        .card h3 {
+            font-size: 1.2rem;
+            color: #2d3436;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .card p {
+            color: #636e72;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* 샌드위치 비유 */
+        .sandwich-box {
+            background: linear-gradient(180deg, #FFE66D 0%, #FFE66D 20%, #4ECDC4 20%, #4ECDC4 50%, #FF6B6B 50%, #FF6B6B 80%, #FFE66D 80%, #FFE66D 100%);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            color: #2d3436;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .sandwich-layer {
+            padding: 12px;
+            margin: 5px 0;
+            border-radius: 8px;
+        }
+
+        .bread-top { background: #FFE66D; }
+        .lettuce { background: #4ECDC4; color: white; }
+        .meat { background: #FF6B6B; color: white; }
+        .bread-bottom { background: #FFE66D; }
+
+        /* 코드 블록 */
+        .code-box {
+            background: #1e1e2e;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .code-box::before {
+            content: '💻 HTML 코드';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 0.8rem;
+            color: #a0a0a0;
+        }
+
+        .code-box pre {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #cdd6f4;
+        }
+
+        .tag { color: #f38ba8; }
+        .attr { color: #89dceb; }
+        .string { color: #a6e3a1; }
+        .comment { color: #6c7086; font-style: italic; }
+        .text { color: #cdd6f4; }
+
+        /* 표 */
+        .table-wrap {
+            overflow-x: auto;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;
+        }
+
+        th {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            color: #2d3436;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        tr:hover {
+            background: #e8f4fd;
+        }
+
+        code {
+            background: #f0f0f0;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-family: 'Consolas', monospace;
+            color: #e74c3c;
+            font-size: 0.9em;
+        }
+
+        /* 팁 박스 */
+        .tip-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .tip-box::before {
+            content: '💡 꼭 기억하세요!';
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: #2d3436;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .tip-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tip-box li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #2d3436;
+            font-size: 1.05rem;
+        }
+
+        .tip-box li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+        }
+
+        /* 체크리스트 */
+        .checklist {
+            background: #fff3cd;
+            border: 2px dashed #ffc107;
+            border-radius: 16px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .checklist h3 {
+            color: #856404;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            font-size: 1.05rem;
+            color: #856404;
+        }
+
+        .check-emoji {
+            font-size: 1.5rem;
+        }
+
+        /* 실습 박스 */
+        .practice-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            padding: 30px;
+            color: white;
+            margin: 25px 0;
+        }
+
+        .practice-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .practice-box p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            opacity: 0.95;
+        }
+
+        .practice-box .step {
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin: 10px 0;
+            font-weight: 700;
+        }
+
+        /* 푸터 */
+        .footer {
+            background: #2d3436;
+            color: #b2bec3;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.95rem;
+        }
+
+        .footer .heart {
+            color: #FF6B6B;
+        }
+
+        /* 마무리 문구 */
+        .final-quote {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            margin: 30px 0;
+        }
+
+        .final-quote h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .final-quote p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <div class="header">
+            <span class="emoji-float">🌐</span>
+            <span class="emoji-float">🚀</span>
+            <span class="emoji-float">⭐</span>
+            <h1>HTML 기초 가이드</h1>
+            <p class="subtitle">초등학생도 쉽게 배우는 웹페이지 만들기!</p>
+        </div>
+
+        <!-- 본문 -->
+        <div class="content">
+
+            <!-- 1. HTML이 뭔가요? -->
+            <div class="section">
+                <h2 class="section-title"><span class="icon">🤔</span> HTML이 뭔가요?</h2>
+                <div class="card">
+                    <p>HTML은 <strong>웹사이트의 뼈대</strong>를 만드는 언어예요!</p>
+                    <p>마치 레고를 쌓을 때 <strong>"이 블록은 여기에, 이 블록은 저기에"</strong> 하고 설명하듯,</p>
+                    <p>HTML은 <strong>"이 글자는 제목이야"</strong>, <strong>"이 그림은 여기 넣어"</strong> 라고 컴퓨터에게 알려주는 거예요.</p>
+                </div>
+            </div>
+
+            <!-- 2. 샌드위치 비유 -->
+            <div class="section">
+                <h2 class="section-title"><span class="icon">🥪</span> HTML 문서 = 샌드위치랑 비슷해요!</h2>
+                <p style="color:#636e72; margin-bottom:15px; font-size:1.05rem;">HTML 문서는 <strong>빵-속-빵</strong> 구조예요. 샌드위치 생각하면 쉬워요!</p>
+
+                <div class="sandwich-box">
+                    <div class="sandwich-layer bread-top">🍞 &lt;html&gt; 태그 (문서 전체를 감싸요)</div>
+                    <div class="sandwich-layer lettuce">🥬 &lt;head&gt; 태그 (보이지 않는 정보)</div>
+                    <div class="sandwich-layer meat">🥩 &lt;body&gt; 태그 (실제로 보이는 내용)</div>
+                    <div class="sandwich-layer bread-bottom">🍞 &lt;/html&gt; 태그 (문서 끝!)</div>
+                </div>
+            </div>
+
+            <!-- 3. 기본 구조 -->
+            <div class="section">
+                <h2 class="section-title"><span class="icon">📋</span> 기본 구조를 한눈에 보기</h2>
+                <div class="code-box">
+<pre><span class="comment">&lt;!-- 이 문서는 HTML5 문서예요! --&gt;</span>
+<span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;title&gt;</span><span class="text">나의 첫 웹페이지</span><span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+    <span class="text">안녕! 나는 처음 만든 웹페이지야!</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>부분</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>&lt;!DOCTYPE html&gt;</code></td>
+                                <td>"이 문서는 HTML5야!" 라고 컴퓨터에게 알려줘요</td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;html&gt;</code></td>
+                                <td>문서의 <strong>시작</strong>! 모든 것을 감싸는 큰 상자예요</td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;head&gt;</code></td>
+                                <td><strong>머리</strong> 부분. 화면에 안 보이는 설정들이 들어가요</td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;title&gt;</code></td>
+                                <td>브라우저 <strong>탭 제목</strong>이에요. 예: "나의 첫 웹페이지"</td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;body&gt;</code></td>
+                                <td><strong>몸통</strong> 부분. 여기에 넣은 것만 화면에 보여요!</td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;/body&gt;</code></td>
+                                <td>몸통 <strong>끝</strong></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;/html&gt;</code></td>
+                                <td>문서 <strong>끝</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 꼭 기억하세요 -->
+            <div class="tip-box">
+                <ul>
+                    <li>태그는 <strong>&lt;태그&gt;</strong>로 열고 <strong>&lt;/태그&gt;</strong>로 닫아요!</li>
+                    <li>예: <code>&lt;body&gt;</code> (열기) → <code>&lt;/body&gt;</code> (닫기)</li>
+                    <li>열고 닫는 태그 사이에 내용을 넣어요!</li>
+                </ul>
+            </div>
+
+            <!-- 4. 직접 따라 해보기 -->
+            <div class="section">
+                <h2 class="section-title"><span class="icon">🎮</span> 직접 따라 해보기!</h2>
+                <div class="practice-box">
+                    <h3>📝 실습 방법</h3>
+                    <p>메모장(또는 VS Code)에 아래를 그대로 써보세요:</p>
+                    <div class="step">1️⃣ 메모장을 열어요</div>
+                    <div class="step">2️⃣ 아래 코드를 그대로 복사해서 붙여넣어요</div>
+                    <div class="step">3️⃣ 파일 → 다른 이름으로 저장 → 이름을 <strong>index.html</strong> 로 저장!</div>
+                    <div class="step">4️⃣ 저장한 파일을 더블클릭하면 브라우저에서 웹페이지가 쫙 펼쳐져요! 🎉</div>
+                </div>
+
+                <div class="code-box">
+<pre><span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;title&gt;</span><span class="text">내 홈페이지</span><span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+    <span class="tag">&lt;h1&gt;</span><span class="text">안녕하세요!</span><span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;p&gt;</span><span class="text">저는 HTML을 배우고 있어요.</span><span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;p&gt;</span><span class="text">오늘은 2026년 5월 14일이에요.</span><span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre>
+                </div>
+            </div>
+
+            <!-- 5. 자주 쓰는 태그 -->
+            <div class="section">
+                <h2 class="section-title"><span class="icon">🏷️</span> 자주 쓰는 태그 쉽게 외우기</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>태그</th>
+                                <th>뜻</th>
+                                <th>예시</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>&lt;h1&gt;</code></td>
+                                <td><strong>Heading 1</strong> (큰 제목)</td>
+                                <td><code>&lt;h1&gt;책 제목&lt;/h1&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;h2&gt;</code></td>
+                                <td><strong>Heading 2</strong> (작은 제목)</td>
+                                <td><code>&lt;h2&gt;1장&lt;/h2&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;p&gt;</code></td>
+                                <td><strong>Paragraph</strong> (단락, 문단)</td>
+                                <td><code>&lt;p&gt;이야기 내용&lt;/p&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;br&gt;</code></td>
+                                <td><strong>Break</strong> (줄바꿈)</td>
+                                <td>문장 끝에 쓰면 다음 줄로!</td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;img&gt;</code></td>
+                                <td><strong>Image</strong> (그림)</td>
+                                <td><code>&lt;img src="고양이.jpg"&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;a&gt;</code></td>
+                                <td><strong>Anchor</strong> (링크, 닻)</td>
+                                <td><code>&lt;a href="https://naver.com"&gt;네이버 가기&lt;/a&gt;</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 6. 체크리스트 -->
+            <div class="section">
+                <h2 class="section-title"><span class="icon">✅</span> HTML 작성 체크리스트</h2>
+                <div class="checklist">
+                    <h3>📋 꼭 확인해야 할 것들!</h3>
+                    <div class="checklist-item">
+                        <span class="check-emoji">☑️</span>
+                        <span><code>&lt;!DOCTYPE html&gt;</code> 선언이 들어갔나요?</span>
+                    </div>
+                    <div class="checklist-item">
+                        <span class="check-emoji">☑️</span>
+                        <span><code>&lt;html&gt;</code> 태그로 시작하고 <code>&lt;/html&gt;</code>로 끝났나요?</span>
+                    </div>
+                    <div class="checklist-item">
+                        <span class="check-emoji">☑️</span>
+                        <span><code>&lt;head&gt;</code>와 <code>&lt;body&gt;</code>가 모두 있나요?</span>
+                    </div>
+                    <div class="checklist-item">
+                        <span class="check-emoji">☑️</span>
+                        <span><code>&lt;title&gt;</code> 태그로 페이지 제목을 지정했나요?</span>
+                    </div>
+                    <div class="checklist-item">
+                        <span class="check-emoji">☑️</span>
+                        <span>모든 태그를 열고 닫았나요? (예: <code>&lt;body&gt;</code> → <code>&lt;/body&gt;</code>)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 마무리 -->
+            <div class="final-quote">
+                <h2>🎯 한 문장으로 정리!</h2>
+                <p><strong>HTML은 웹페이지의 "설계도"예요.</strong></p>
+                <p><code>&lt;html&gt;</code>로 시작해서 <code>&lt;/html&gt;</code>로 끝내고,<br>
+                안에는 <code>&lt;head&gt;</code>(설정)와 <code>&lt;body&gt;</code>(보이는 내용)를 넣으면 돼요!</p>
+            </div>
+
+        </div>
+
+        <!-- 푸터 -->
+        <div class="footer">
+            <p>HTML 기초 가이드 - 초등학생도 쉽게! <span class="heart">❤️</span></p>
+            <p>더 궁금한 게 있으면 언제든 물어보세요! 😊</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mostly Fluid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      #wrap {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        max-width: 960px;
+        background: gray;
+        margin: 0 auto;
+      }
+      @media screen and (max-width: 960px) {
+        #wrap {
+          width: 100%;
+          max-width: 960px;
+          background: gray;
+          margin: 0 auto;
+        }
+      }
+      #content {
+        background: yellow;
+        flex-grow: 1;
+        flex-basis: 600px;
+        flex-shrink: 1;
+        flex: 1 1 62.5%;
+      }
+      #aside {
+        background: orange;
+        flex-grow: 1;
+        flex-basis: 400px;
+        flex-shrink: 1;
+        flex: 1 1 35%;
+      }
+      @media screen and (max-width: 600px) {
+        #wrap {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="content">Content</div>
+      <div id="aside">Aside</div>
+    </div>
+  </body>
+</html>

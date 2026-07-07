@@ -1,0 +1,9 @@
+.green {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.parent {position: fixed;
+
+}
+.red {position: relative; top: 50%;}

@@ -1,0 +1,16 @@
+@charset 'urf-8';
+/*  */
+@import url(./import.css);
+p {
+  color: green;
+}
+* {
+  color: blue;
+}
+h2 {
+  color: purple;
+}
+h2.h2[title="점수"] {
+  color: green;
+}
+#h2.h2[title="점수"]{color: black;}

@@ -1,0 +1,238 @@
+:root {
+    /* 시안 기반 컬러 팔레트 (iOS 스타일) */
+    --bg-color: #f2f2f7;
+    --card-bg: #ffffff;
+    --text-color: #000000;
+    --primary-color: #007aff;
+    --secondary-bg: #f2f2f7;
+    --border-color: #e5e5ea;
+    --destructive: #ff3b30;
+    
+    --safe-area-bottom: env(safe-area-inset-bottom);
+}
+
+[data-theme='dark'] {
+    --bg-color: #000000;
+    --card-bg: #1c1c1e;
+    --text-color: #ffffff;
+    --primary-color: #0a84ff;
+    --secondary-bg: #2c2c2e;
+    --border-color: #38383a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* App Container (시안 규격 406x653 반영) */
+.app-viewport {
+    width: 100%;
+    max-width: 406px;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.1);
+}
+
+/* Header */
+.header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-link {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Canvas Section */
+.canvas-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.canvas-container {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 시안의 Action Sheet 스타일 컨트롤러 */
+.controller-container {
+    padding: 16px;
+    width: 100%;
+}
+
+.action-group {
+    background-color: var(--card-bg);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.control-item {
+    width: 100%;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.control-item:last-child {
+    border-bottom: none;
+}
+
+.control-label {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-color);
+    opacity: 0.6;
+}
+
+input[type="text"] {
+    width: 100%;
+    border: none;
+    background: none;
+    color: var(--text-color);
+    font-size: 17px;
+    outline: none;
+    padding: 4px 0;
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 30px;
+    accent-color: var(--primary-color);
+}
+
+select {
+    width: 100%;
+    border: none;
+    background: none;
+    color: var(--primary-color);
+    font-size: 17px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* 시안의 Action Sheet 버튼 스타일 */
+.action-button {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--card-bg);
+    border: none;
+    border-radius: 14px;
+    color: var(--primary-color);
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.action-button:active {
+    background-color: var(--border-color);
+}
+
+.action-button.publish {
+    margin-top: 10px;
+}
+
+/* Community & Feed */
+.feed-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+}
+
+.post-card {
+    background-color: var(--card-bg);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.post-preview {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-info {
+    padding: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Action Sheet (Pop-up) */
+.action-sheet-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 16px;
+    z-index: 1000;
+}
+
+.action-sheet {
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.action-sheet-backdrop.show {
+    display: flex;
+}
+
+.action-sheet-backdrop.show .action-sheet {
+    transform: translateY(0);
+}

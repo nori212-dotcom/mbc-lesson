@@ -1,0 +1,8 @@
+@charset "UTF-8";
+@import url("./fonts.css");
+P {
+  border: 1px solid #000;
+}
+.valign img{vertical-align: middle;
+vertical-align: top;
+vertical-align: text-top;}

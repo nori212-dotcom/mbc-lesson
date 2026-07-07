@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize.css/8.0.1/normalize.min.css"
+    />
+    <style>
+      .cont {
+        display: grid;
+        grid-template-areas:
+          "box1 box2"
+          "box3 box4";
+      }
+      .item:nth-child(1) {
+        grid-area: box1;
+        background: gray;
+      }
+      .item:nth-child(2) {
+        grid-area: box2;
+        background: rgb(188, 255, 4);
+      }
+      .item:nth-child(3) {
+        grid-area: box3;
+        background: rgb(29, 223, 197);
+      }
+      .item:nth-child(4) {
+        grid-area: box4;
+        background: rgb(228, 14, 85);
+      }
+      item {
+        width: 50%;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <div class="item">box1</div>
+      <div class="item">box2</div>
+      <div class="item">box3</div>
+      <div class="item">box4</div>
+    </div>
+  </body>
+</html>

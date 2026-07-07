@@ -1,0 +1,7 @@
+li{list-style: none;}
+.d{color: rgb(156, 99, 23); font-weight: 600; font-size: 20px;}
+ul>li{font-weight: 300;
+font-size: 15px;
+padding: 2px;
+font-weight: 400;}
+h1{font-size: 28px; letter-spacing: 1.5px;}

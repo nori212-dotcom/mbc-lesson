@@ -1,0 +1,26 @@
+.green {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+.blue {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.red {
+  position: fixed;
+  right: 0;
+  top: 50%;
+}
+.parent {
+  position: relative;
+  position: absolute;
+  position: static;
+  top: 100px;
+  left: 500px;
+}
+/* absolute */
+body{position: fixed;
+top: 100px;
+left: 300px;}

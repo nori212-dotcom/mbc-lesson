@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&family=Nanum+Pen+Script&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.home-container {
+    width: 414px;
+    height: 896px;
+    background-color: #0e3659;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* 사진 및 효과 섹션 */
+.photo-wrapper {
+    position: absolute;
+    left: 72px;
+    top: 129px;
+    width: 258px;
+    height: 258px;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* 타이틀: SLEEP */
+.title {
+    position: absolute;
+    left: 93px;
+    top: 396px;
+    font-family: 'Long Cang', cursive;
+    font-size: 96px;
+    color: white;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* 본문 링크 및 텍스트 */
+.content-link {
+    position: absolute;
+    left: 39px;
+    top: 510px;
+    width: 335px;
+    height: 102px;
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+}
+
+.description {
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 16px;
+    line-height: 1.75;
+    margin: 0;
+    letter-spacing: 1.12px;
+    text-align: justify;
+}
+
+/* 하단 장식 요소 */
+.decoration-wrapper {
+    position: absolute;
+    left: 83px;
+    top: 613px;
+    width: 247px;
+    height: 247px;
+}
+
+.exclude {
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,38 @@
+/* 전체선택자*/
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 20px;
+}
+/* 그룹선택자 */
+.tea {color: red;}
+/* 태그선택자 */
+h1 {
+  background-color: beige;
+}
+/* 아이디선택자 */
+#container {
+  background-color: gainsboro;
+  padding: 10px;
+}
+/* 클래스선택자 */
+.tea1 {
+  background-color: beige;
+}
+/* 하위선택자 */
+li p {
+  color: green;
+}
+/* 자식선택자 */
+p > span {
+  color: blue;
+}
+/* 인접선택자 */
+.tea2 + li {
+  color: brown;
+  background-color: white;
+}
+/* 형제선택자  */
+p~ul{padding: 30px;}

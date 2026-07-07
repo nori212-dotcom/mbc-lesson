@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)http://127.0.0.1:5500/02/%ED%98%95%EC%84%B1%ED%80%B4%EC%A6%884.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형성퀴즈4</title>
+    <style>
+      li {
+        color: gray;
+      }
+      li:hover {
+        color: blue;
+      }
+      li::marker {
+        color: black;
+      }
+      img {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+        
+      }
+      hr{margin-block-start: 1;}
+      ul {
+        padding-left: 5px;
+        margin-top: 5px;
+      }
+
+      .메뉴 {
+        border: 5px solid cadetblue;
+        width: 150px;
+        margin-left: 20px;
+      }
+      .게시판 {
+        border: 5px solid hotpink;
+        width: 150px;
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="메뉴">
+      <img src="./형성퀴즈4_files/34.png" alt="카테고리"><hr>
+      <ul>
+        <li>밥/죽/면</li>
+        <li>매일 반찬</li>
+        <li>국/찌게/전골</li>
+        <li>가족/초대요리</li>
+        <li>소스/양념장</li>
+        <li>간식/음료</li>
+        <li>기타</li>
+      </ul>
+    </div>
+    <br>
+    <br>
+    <div class="게시판">
+      <img src="./형성퀴즈4_files/33.png" alt="게시판">
+      <ul>
+        <li>자유 게시판</li>
+        <li>회원 장터</li>
+        <li>나만의 레시피</li>
+        <li>불후의 레시피</li>
+      </ul>
+    </div>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>

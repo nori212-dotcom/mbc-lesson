@@ -1,0 +1,7 @@
+@charset "UTF-8";
+@import url(./fonts.css);
+
+P{padding: 10px 50px;
+text-indent: 20px;}
+.paper{text-indent: -20px;
+text-indent: -99999999px;}

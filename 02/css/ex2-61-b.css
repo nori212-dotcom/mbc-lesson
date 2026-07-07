@@ -1,0 +1,23 @@
+@charset "UTF-8";
+.red {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.green {
+  position: relative;
+  top: 50%;
+  left: 50%;
+}
+.child.blue {
+  position: fixed;
+  width: auto;
+  left: 0;
+  right: 0;
+  top: -100px;
+  transition: 0.5s;
+}
+.green:hover+.blue{top:0}
+body {
+  height: 200vh;
+}

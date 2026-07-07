@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@import url(./reset.css);
+body {
+  background: url(/02/img/bg_grid.gif);
+}
+h3 {
+  height: 96px;
+  border: 2px solid rgba(0, 255, 0, 0.8);
+  max-width: 296px;
+}
+p {
+  background: rgba(255, 0, 0, 0.5);
+  width: 660px;
+  min-height: 100px;
+  border: 20px solid rgba(0, 255, 0, 0.5);
+  
+}

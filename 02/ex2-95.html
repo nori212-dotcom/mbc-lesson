@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --move: calc(100% - 300px);
+            }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: green;
+        background-color: #1c2130;
+        opacity: 1;
+        background-image:
+          conic-gradient(
+            from 60deg at 56.25% calc(425% / 6),
+            transparent 0deg,
+            transparent 0.5deg,
+            #018f1f 0.5deg,
+            #018f1f 119.5deg,
+            transparent 119.5deg,
+            transparent 120deg
+          ),
+          conic-gradient(
+            from 60deg at 56.25% calc(425% / 6),
+            transparent 0deg,
+            transparent 0.5deg,
+            #018f1f 0.5deg,
+            #018f1f 119.5deg,
+            transparent 119.5deg,
+            transparent 120deg
+          ),
+          conic-gradient(
+            from 180deg at 43.75% calc(425% / 6),
+            transparent 0deg,
+            transparent 0.5deg,
+            #018f1f 0.5deg,
+            #018f1f 119.5deg,
+            transparent 119.5deg,
+            transparent 120deg
+          ),
+          conic-gradient(
+            from 180deg at 43.75% calc(425% / 6),
+            transparent 0deg,
+            transparent 0.5deg,
+            #018f1f 0.5deg,
+            #018f1f 119.5deg,
+            transparent 119.5deg,
+            transparent 120deg
+          ),
+          conic-gradient(
+            from -60deg at 50% calc(175% / 12),
+            transparent 0deg,
+            transparent 0.5deg,
+            #018f1f 0.5deg,
+            #018f1f 119.5deg,
+            transparent 119.5deg,
+            transparent 120deg
+          ),
+          conic-gradient(
+            from -60deg at 50% calc(175% / 12),
+            transparent 0deg,
+            transparent 0.5deg,
+            #018f1f 0.5deg,
+            #018f1f 119.5deg,
+            transparent 119.5deg,
+            transparent 120deg
+          );
+        background-position:
+          0 0,
+          10px 17px,
+          0 0,
+          10px 17px,
+          10px 0,
+          0 17px;
+        background-size: 20px 34px;
+      }
+      .ball {
+        z-index: 5;
+        width: 200px;
+        animation: cup 5s infinite alternate;
+        position: absolute;
+      }
+      @keyframes cup {
+        0% {
+          left: 0;
+          transform: rotate(0deg);
+        }
+        50% {
+          left: var(--move);
+          top: 0;
+        }
+        100% {
+          left: var(--move);
+          top: var(--move);
+          transform: rotate(720deg);
+        }
+      }
+      .goal {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./img/Footballball.png" alt="" class="ball" />
+    <img src="./img/goalpost.png" alt="" class="goal" />
+  </body>
+</html>

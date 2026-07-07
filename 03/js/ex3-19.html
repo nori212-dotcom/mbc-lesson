@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let your_sex = prompt("성별을 입력하세요", "남자,여자");
+      if (your_sex == "남자") {
+        document.write("네이름은 철수야 맞지?");
+      }
+      if (your_sex == "여자") {
+        document.write("네이름은 영희야 맞지?");
+      }
+      let height = prompt("신장을 입력하세요", "00");
+      let weight = prompt("몸무게를 입력하세요", "00");
+      if (!height || !weight || isNaN(height) || isNaN(weight)) {
+        alert("정확한 숫자를 입력하셔야 합니다. 새로고침을 해주세요.");
+      } else {
+        var normalWeight = (height - 100) * 0.9;
+        var message = "";
+        if (weight >= normalWeight) {
+          message = "적정 몸무게 이상";
+        } else {
+          message = "적정 몸무게 미달";
+        }
+        alert(
+          "계산 결과입니다.\n\n" +
+            "입력 신장: " +
+            height +
+            "cm\n" +
+            "입력 몸무게: " +
+            weight +
+            "kg\n" +
+            "적정 몸무게: " +
+            normalWeight.toFixed(1) +
+            "kg\n\n" +
+            "👉 결과: " +
+            message,
+        );
+      }
+    </script>
+  </body>
+</html>

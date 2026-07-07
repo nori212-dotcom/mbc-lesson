@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrap {
+        width: 600px;
+        height: 300px;
+        position: relative;
+        background: #eee url(img/yellow\ bird.png) no-repeat;
+        background-position: 450px 170px;
+        background-size: 150px;
+      }
+      .box {
+        position: absolute;
+        background: url(img/black\ cat.png);
+        width: 228px;
+        height: 220px;
+        offset-path: path(
+          "M1.00024 79.529C2.11354 82.138 9.6005 94.1257 15.5944 98.2584C19.0994 100.675 29.0441 99.771 40.284 99.3999C49.3845 99.0994 55.3249 90.4147 63.0112 85.1742C69.7458 80.5827 74.06 60.1866 76.5284 40.788C77.3824 34.0767 79.7166 29.3176 80.6499 25.9495C82.2073 20.3301 110.586 9.15429 126.745 2.13145C129.454 0.954309 132.931 0.810104 136.484 1.18121C143.998 1.96585 150.53 13.8774 154.865 20.6585C155.659 21.9001 156.917 22.5365 157.491 24.7744C158.064 27.0122 158.064 30.7233 156.951 33.1917C152.497 43.067 141.207 45.3987 139.52 50.8078C138.449 54.2442 138.947 59.5569 143.957 62.2333C157.422 69.4268 171.908 64.1676 176.957 62.4864C190.786 57.8819 202.642 40.9567 211.441 32.888C216.432 28.3121 222.895 28.924 228.49 29.8517C246.116 32.7747 255.833 44.6003 261.327 51.7693C263.39 59.6356 267.124 67.8786 270.509 73.6982C271.262 75.0195 272.004 76.1328 275.018 79.529"
+        );
+
+        animation: move 5s infinite ease-in-out;
+      }
+      @keyframes move {
+        0% {
+          offset-distance: 0%;
+        }
+        100% {
+          offset-distance: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="box"></div>
+    </div>
+  </body>
+</html>
